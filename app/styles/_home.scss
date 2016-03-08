@@ -1,0 +1,155 @@
+body {
+    font-family: $main;
+    // background-color: purple;
+    // overflow-x: hidden; 
+}
+
+html { 
+    overflow-x: hidden;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+    opacity:0;  /* make things invisible upon start */
+    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration: 0.4s;
+    -moz-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+}
+
+.fade-in.slow {
+    animation-delay: 0.3s;
+}
+
+.bg-image {
+    background: url(../images/bg.jpg); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    // background-color: $dark-gray;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -2;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    float: left;
+    clear: left;
+    padding: 431px 0;
+}
+
+.bg-image-filter {
+    background-color: rgba(133,133,133,.7);
+    width: 100%;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    padding: 431px 0;
+}
+
+.bg-color-filter {
+    background-color: rgba(119,212,186,.5);
+    width: 100%;
+    padding: 431px 0;
+    top: 0;
+    position: fixed;
+}
+
+.title-wrapper {
+    // border: 2px solid white;
+    // border-radius: 35px;
+    // width: 420px;
+    // top: 50%;
+    // transform: translateY(-50%);
+    // position: relative;
+    // text-align: center;
+    // margin: 0 auto;
+    padding: 400px 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 45px;
+    z-index: 100;
+    padding: 0px;
+    position: inherit;
+}
+
+.music {
+    position: relative;
+    width: 100%;
+    padding: 100px 0;
+    background-color: $dark-gray;
+    float: left;
+    h2 {
+        color: white;
+    }
+}
+
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+    }
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+
+// MEDIA QUERIES -------------------------------------
+
+// LARGE PHONE --------------------------------
+@media screen and (min-width: 350px) {
+
+}    
+
+// SMALL TABLET -------------------------------
+@media screen and (min-width: 480px) {
+
+}
+
+// LARGE TABLET -------------------------------
+@media screen and (min-width: 768px) {
+
+}    
+
+// SMALL LAPTOP/DESKTOP -----------------------
+@media screen and (min-width: 992px) {
+
+}       
+
+// MEDIUM LAPTOP/DESKTOP ----------------------
+@media screen and (min-width: 1200px) {
+  
+}           
+
+// LARGE LAPTOP/DESKTOP -----------------------
+@media screen and (min-width: 1400px) {
+   
+}      
+
+
+
+
+
+
