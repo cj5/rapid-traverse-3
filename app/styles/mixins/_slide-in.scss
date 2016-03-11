@@ -40,7 +40,7 @@
 @mixin slide-out-menu {
     animation-name: slide-out-menu;
     animation-duration: .2s;
-    animation-iteration-count:30;
+    animation-iteration-count:1;
     animation-timing-function: ease-in-out;
     -webkit-animation-name: slide-out-menu;
     -webkit-animation-iteration-count:1;
@@ -221,4 +221,18 @@ $duration-slowest: 0.9s;
         margin-right: auto;
         margin-left: auto;      
     }
+}
+
+@mixin kf-nav-slide {
+    @keyframes nav-slide {
+        0% {
+        opacity:0;
+        left:-500px;
+        }
+
+        100% {
+        opacity:1;
+        left:0px;
+        }
+    }    
 }

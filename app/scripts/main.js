@@ -14,7 +14,8 @@ $(document).ready(function(){
     });
     function updateContainer() {
         var theHeight = $(window).height();
-        $('.title-wrapper').css('padding', theHeight/2-24.5);
+        $('.title-wrapper').css('padding-top', theHeight/2-55);
+        $('.title-wrapper').css('padding-bottom', theHeight/2-56);
     }
     // function updateContainer() {
     //     var theHeight = $(window).height();
