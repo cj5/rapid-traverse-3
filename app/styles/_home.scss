@@ -91,6 +91,7 @@ html {
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     // overflow: hidden;
+    opacity: 1;
     span {
         display: block;
         background: white;
@@ -212,7 +213,7 @@ html {
                 transition: all 0.2s ease-in-out;
             }
             a:hover {
-                color: gray;
+                color: $teal;
             }
         }    
     } 
@@ -247,29 +248,38 @@ h1 {
     display: none;
 }
 
-#music-link, #inspiration-link{
+h2 {
+    color: white;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin-bottom: 45px;
+}
+
+
+// MUSIC & INSPIRATION SECTIONS
+
+#music-link, #inspiration-link {
     position: relative;
     width: 100%;
     padding: 27px 25px 110px 25px;
-    h2 {
-        color: white;
-        margin: 0;
-        text-transform: uppercase;
-        font-size: 30px;
-        font-weight: 600;
-        letter-spacing: 5px;
-        margin-bottom: 45px;
-    }
-    .audio-wrapper {
-        // text-align: center;
-    }
 
     .audio-controls-wrapper {
         text-align: center;
+            h3 {
+                padding-left: 20px;
+                margin-top: 30px;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+            }
     }
 
     audio {
         width: 93%;
+        // background-color: gray;
+        // border-radius: 5px;
     }
 
     h3 {
@@ -298,6 +308,36 @@ h1 {
     }
 }
 
+// CONTACT SECTION
+
+#contact-link {
+    position: relative;
+    width: 100%;
+    background-color: #191919;
+    padding: 27px 25px 62px 25px;
+}
+
+.contact-wrapper {
+    width: 100%;
+    position: relative;
+    img {
+        width: 100px;
+        border: 0px solid $teal;
+        transition: border 0.2s ease-in-out;
+        -webkit-transition: border 0.2s ease-in-out;
+        -moz-transition: border 0.2s ease-in-out;
+        -o-transition: border 0.2s ease-in-out;
+    
+        border-radius: 15px;
+        display: block;
+        margin: 15px auto;
+        background-color: white;
+        &:hover {
+            border: 5px solid $teal;
+        }
+    }
+}
+
 // MEDIA QUERIES -------------------------------------
 
 // LARGE PHONE --------------------------------
@@ -312,6 +352,39 @@ h1 {
 
 // LARGE TABLET -------------------------------
 @media screen and (min-width: 768px) {
+    #navicon {
+        opacity: 0;
+    }
+
+    #navicon:hover {
+        // span:nth-child(1) {
+        //     top: -2px;
+        //     transition: all 0.2s ease-in-out;
+        // }
+        // span:nth-child(4) {
+        //     top: 24px;
+        //     transition: all 0.2s ease-in-out;
+        // }
+        span {
+            background-color: $teal;
+        }
+    } 
+
+    #navicon.open:hover {
+        span {
+            background-color: $teal;
+            transition: all 0.4s ease-in-out;
+
+        }
+        // span:nth-child(2) {
+        //     transform: rotate(50deg);
+
+        // }
+        // span:nth-child(3) {
+        //     transform: rotate(-50deg);
+        // }
+    }
+
     .nav {
         display: inherit;
         ul {
@@ -334,25 +407,58 @@ h1 {
             transition: all 0.2s ease-in-out;
         } 
         a:hover {
-            color: #b2b2b2;
+            color: $med-gray;
             // #C4C4C4
         }   
+    }
+    .contact-wrapper {
+        text-align: center;
+        margin: 100px 0;
+        img {
+            display: inline;
+            margin: 0 30px;
+        }
+    }
+    #music-link, #inspiration-link {
+        h3 {
+            padding-left: 70px;
+        }
+    }
+    .audio-controls-wrapper {
+        margin-bottom: 45px;
+    }
+    .menu.open ul li a {
+        font-size: 60px;
     }
 }    
 
 // SMALL LAPTOP/DESKTOP -----------------------
 @media screen and (min-width: 992px) {
-
+    #music-link, #inspiration-link {
+        h3 {
+            padding-left: 175px;
+        }
+    }
 }       
 
 // MEDIUM LAPTOP/DESKTOP ----------------------
 @media screen and (min-width: 1200px) {
-  
+    #music-link, #inspiration-link {
+        h3 {
+            padding-left: 21%;
+        }
+    }
 }           
 
 // LARGE LAPTOP/DESKTOP -----------------------
 @media screen and (min-width: 1400px) {
-   
+    @media screen and (min-width: 1200px) {
+        #music-link, #inspiration-link {
+            h3 {
+                padding-left: 23%;
+            }
+        }
+    }           
 }      
 
 
