@@ -17,6 +17,7 @@ $(document).ready(function(){
         }, 500);
         return false;
     });
+    
     function updateContainer() {
         var theHeight = $(window).height();
         var titleWrapperHeight = $('.title-wrapper').height();

@@ -12,6 +12,10 @@ html {
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
+@-webkit-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@-moz-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+
 .fade-in {
     opacity:0;  /* make things invisible upon start */
     -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
@@ -44,7 +48,7 @@ html {
 }
 
 .bg-image {
-    // background: url(../images/bg.jpg); 
+    background: url(../images/bg.jpg); 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -61,19 +65,19 @@ html {
     padding: 431px 0;
 }
 
-// .bg-image-filter {
-//     background-color: rgba(133,133,133,.7);
-//     width: 100%;
-//     z-index: 0;
-//     margin: 0;
-//     padding: 0;
-//     position: fixed;
-//     top: 0;
-//     padding: 431px 0;
-// }
+/* .bg-image-filter {
+    background-color: rgba(133,133,133,.7);
+    width: 100%;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    padding: 431px 0;
+} */
 
 .bg-color-filter {
-    background-color: rgba(95,184,161,0.90);
+    background-color: rgba(95,184,161,0.80);
     width: 100%;
     padding: 431px 0;
     top: 0;
@@ -81,10 +85,10 @@ html {
 }
 
 #navicon {
-    top: 30px;
-    right: 20px;
+    top: 25px;
+    right: 15px;
     position: fixed;
-    width: 45px;
+    width: 35px;
     height: 25px;
     z-index: 999999;
     // margin: 50px auto;
@@ -95,8 +99,8 @@ html {
     span {
         display: block;
         background: white;
-        width: 85%;
-        height: 3px;
+        width: 70%;
+        height: 2px;
         position: absolute;
         border-radius: 5px;
         transition: all 0.3s ease-in-out;
@@ -104,37 +108,16 @@ html {
     }   
 }
 
-// #navicon:hover {
-//     span:nth-child(1) {
-//         top: -2px;
-//     }
-//     span:nth-child(4) {
-//         top: 28px;
-//     }
-// } 
-
-// #navicon.open:hover {
-//     // span {
-//     //     background-color: gray;
-//     // }
-//     span:nth-child(2) {
-//         transform: rotate(50deg);
-//     }
-//     span:nth-child(3) {
-//         transform: rotate(-50deg);
-//     }
-// }
-
 #navicon span:nth-child(1) {
   top: 0px;
 }
 
 #navicon span:nth-child(2),#navicon span:nth-child(3) {
-  top: 11px;
+  top: 7px;
 }
 
 #navicon span:nth-child(4) {
-  top: 22px;
+  top: 14px;
 }
 
 #navicon.open span:nth-child(1) {
@@ -163,6 +146,7 @@ html {
   left: 50%;
 }
 
+/*
 .menu {
     position: relative;
     top: 0;
@@ -202,7 +186,7 @@ html {
         padding: 0;
         margin: 0;
         li {
-            margin: 20px 10px;
+            margin: 10px 10px;
             a {
                 text-decoration: none;
                 color: white;
@@ -217,6 +201,63 @@ html {
             }
         }    
     } 
+}
+*/
+
+.menu {
+    background: rgba(0, 0, 0, 0);
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -99999;
+    ul {
+        position: relative;
+        top: 47%;
+        transform: translateY(-50%);
+        z-index: 900;
+        text-align: center;
+        list-style-type: none;
+        padding: 0;
+        margin: 0 25px;
+        li {
+            display: block;
+            margin: 10px 10px;
+            // display: none;
+            a {
+                font-family: $secondary;
+                text-decoration: none;
+                color: transparent;
+                font-size: 30px;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                font-weight: 600;
+                transition: all 0.3s ease-in-out;
+            }
+            // a:link, a:visited {
+            //     color: transparent;
+            // }
+            // a:hover {
+            //     clear: both;
+            // }    
+        } 
+    }
+}
+
+.menu.open {
+    background: rgba(0, 0, 0, 0.8);
+    display: block;
+    z-index: 99999;
+    li {
+        display: block;
+        a {
+
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+    }           
 }
 
 .title-wrapper {
@@ -249,13 +290,14 @@ h1 {
 }
 
 h2 {
+    font-family: $secondary;
+    text-align: center;
     color: white;
-    margin: 0;
+    margin: -8px 0 25px 0;
     text-transform: uppercase;
     font-size: 30px;
     font-weight: 600;
     letter-spacing: 5px;
-    margin-bottom: 45px;
 }
 
 
@@ -284,7 +326,7 @@ h2 {
 
     h3 {
         padding-left: 20px;
-        margin-top: 30px;
+        margin-top: 40px;
         text-transform: uppercase;
         letter-spacing: 3px;
     }
@@ -365,6 +407,7 @@ h2 {
 // LARGE TABLET -------------------------------
 @media screen and (min-width: 768px) {
     #navicon {
+        // display: none;
         opacity: 0;
     }
 
@@ -397,6 +440,16 @@ h2 {
         // }
     }
 
+    #music-link, #inspiration-link {
+        audio {
+            width: 85%;
+        }
+    }
+
+    h1 {
+        font-size: 70px;
+    }    
+
     .nav {
         display: inherit;
         ul {
@@ -409,20 +462,47 @@ h2 {
             padding: 10px 0;
         }    
         a {
+            border: 1px solid white;
+            border-radius: 20px;
+            padding: 5px 15px;
+            font-family: $secondary;
             color: #F2F2F2;
             font-size: 16px;
             text-transform: uppercase;
             letter-spacing: 2px;
             text-decoration: none;
-            padding: 0 40px;
+            margin: 0 20px;
             font-weight: 500;
             transition: all 0.2s ease-in-out;
         } 
         a:hover {
-            color: $med-gray;
+            color: $teal;
+            background-color: white;
             // #C4C4C4
         }   
     }
+
+    .menu.open {
+        background: rgba(0, 0, 0, 0.8);
+        display: block;
+        z-index: 99999;
+        li {
+            display: block;
+            a {
+                color: white;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    color: $teal;
+                }
+            }
+        }           
+    }
+
+    h2 {
+        margin: 60px 0 45px 0;
+        font-size: 40px;
+    }
+
     .contact-wrapper {
         text-align: center;
         margin: 100px 0;
@@ -435,6 +515,7 @@ h2 {
     #music-link, #inspiration-link {
         h3 {
             padding-left: 70px;
+            margin-top: 60px;
         }
     }
     .audio-controls-wrapper {
@@ -480,6 +561,19 @@ h2 {
             padding-left: 175px;
         }
     }
+
+    #music-link, #inspiration-link {
+        audio {
+            width: 69%;
+        }
+    }
+
+    .nav {
+        a {
+            font-size: 20px;
+            margin: 0 30px;
+        }
+    }
 }       
 
 // MEDIUM LAPTOP/DESKTOP ----------------------
@@ -487,6 +581,12 @@ h2 {
     #music-link, #inspiration-link {
         h3 {
             padding-left: 21%;
+        }
+    }
+
+    #music-link, #inspiration-link {
+        audio {
+            width: 60%;
         }
     }
 }           
